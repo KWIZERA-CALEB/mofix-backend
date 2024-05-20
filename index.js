@@ -3,10 +3,18 @@ const mongoose = require('mongoose')
 const database = require('./database')
 const bodyParser = require('body-parser')
 const { config } = require('dotenv')
+const cors = require('cors')
 
 config()
 
 const app = express()
+
+app.use(cors())
+app.use(bodyParser.json())
+
+const UserRoute = require('./Routes/UserRoute')
+
+
 
 
 database.connect((error)=> {
@@ -18,3 +26,6 @@ database.connect((error)=> {
         })
     }
 })
+
+
+app.use('/api', UserRoute)
