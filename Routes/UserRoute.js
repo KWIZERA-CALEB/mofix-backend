@@ -2,7 +2,9 @@ const express = require('express')
 const UserController = require('../Controllers/UserController')
 const router = express.Router()
 
-router.post('/signup', UserController.store)
+const authenticate = require('../Middlewares/Authentication')
+
+router.post('/signup', authenticate, UserController.store)
 router.post('/login', UserController.login)
 
 
