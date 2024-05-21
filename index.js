@@ -14,6 +14,8 @@ app.use(bodyParser.json())
 
 const UserRoute = require('./Routes/UserRoute')
 
+const MovieRoute = require('./Routes/MovieRoute')
+
 
 
 
@@ -29,3 +31,4 @@ database.connect((error)=> {
 
 
 app.use('/api', UserRoute)
+app.use('/api', MovieRoute)
