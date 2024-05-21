@@ -1,12 +1,17 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const { config } = require('dotenv')
 
-const db_name = 'mofix'
+config()
 
-const db_url = `mongodb://127.0.0.1:27017/${db_name}`
+
+
+const dbConnectionString = process.env.NODE_ENV === 'production' 
+    ? process.env.PROD_DB_CONNECT_STRING 
+    : process.env.DEV_DB_CONNECT_STRING;
 
 const connect = (callback) => {
-    mongoose.connect(db_url)
+    mongoose.connect(dbConnectionString)
         .then((response)=> {
             console.log('Database connected')
             callback()

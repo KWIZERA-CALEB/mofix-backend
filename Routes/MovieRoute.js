@@ -7,6 +7,6 @@ const UploadMovieVideoMiddleware =  require('../Middlewares/UploadVideoMovie')
 
 
 //movie routes
-router.post('/addmovie',UploadThumbnailMiddleware.single('thumbnail_img'), UploadMovieVideoMiddleware.single('movie_video'), MovieController.add)
+router.post('/addmovie',UploadThumbnailMiddleware.single('thumbnail_img'), MovieController.add)
 
 module.exports = router
