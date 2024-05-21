@@ -10,6 +10,16 @@ const add = (req, res)=> {
         movie_des: req.body.movie_des
     })
 
+    //get the thumbnail image
+    if(req.file) {
+        movie.thumbnail_img = req.file.path
+    }
+
+    //get the movie video
+    if(req.file) {
+        movie.movie_video = req.file.path
+    }
+
     //store movie
     movie.save()
         .then(()=> {

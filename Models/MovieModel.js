@@ -13,6 +13,12 @@ const MovieSchema = new Schema({
     },
     movie_des: {
         type: String
+    },
+    thumbnail_img: {
+        type: String
+    },
+    movie_video: {
+        type: String
     }
 }, {timestamps: true})
 
