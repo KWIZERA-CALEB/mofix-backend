@@ -16,9 +16,6 @@ const MovieSchema = new Schema({
     },
     thumbnail_img: {
         type: String
-    },
-    movie_video: {
-        type: String
     }
 }, {timestamps: true})
 

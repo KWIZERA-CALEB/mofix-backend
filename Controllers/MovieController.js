@@ -16,9 +16,9 @@ const add = (req, res)=> {
     }
 
     //get the movie video
-    if(req.file) {
-        movie.movie_video = req.file.path
-    }
+    // if(req.file) {
+    //     movie.movie_video = req.file.path
+    // }
 
     //store movie
     movie.save()
@@ -35,4 +35,19 @@ const add = (req, res)=> {
         })
 }
 
-module.exports = { add }
+const index = (req, res)=> {
+    MovieModel.find()
+        .then((data)=> {
+            res.json({
+                data
+            })
+        })
+        .catch((error)=> {
+            console.log(error)
+            res.json({
+                message: 'Failed to fetch movies'
+            })
+        })
+}
+
+module.exports = { add, index }
