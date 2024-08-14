@@ -16,9 +16,9 @@ const add = (req, res)=> {
     }
 
     //get the movie video
-    // if(req.file) {
-    //     movie.movie_video = req.file.path
-    // }
+    if(req.file) {
+        movie.movie_video = req.file.path
+    }
 
     //store movie
     movie.save()

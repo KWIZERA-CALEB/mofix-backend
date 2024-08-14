@@ -18,7 +18,7 @@ let upload_video = multer({
         if(file.mimetype == "video/mp4" || file.mimetype == "video/avi") {
             callback(null, true)
         }else{
-            console.log('Only image of png and jpg are allowed')
+            console.log('Only videos of mp4 and avi are allowed')
         }
     }
 
